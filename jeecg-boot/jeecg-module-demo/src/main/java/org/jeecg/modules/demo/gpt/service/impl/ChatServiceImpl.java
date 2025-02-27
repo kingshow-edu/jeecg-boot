@@ -104,6 +104,7 @@ public class ChatServiceImpl implements ChatService {
         //超时回调
         sseEmitter.onTimeout(() -> {
             log.info("[{}]连接超时...................", uid);
+            LocalCache.CACHE.remove(uid);
         });
         //异常回调
         sseEmitter.onError(
@@ -115,7 +116,7 @@ public class ChatServiceImpl implements ChatService {
                                 .name("发生异常！")
                                 .data(Message.builder().content("发生异常请重试！").build())
                                 .reconnectTime(3000));
-                        LocalCache.CACHE.put(uid, sseEmitter);
+                        LocalCache.CACHE.remove(uid);
                     } catch (IOException e) {
                         log.error(e.getMessage(),e);
                     }
@@ -173,13 +174,19 @@ public class ChatServiceImpl implements ChatService {
         //update-begin---author:chenrui ---date:20240625  for：[TV360X-1570]给于更友好的提示，提示未配置ai------------
         if (null != openAiStreamClient) {
             OpenAISSEEventSourceListener openAIEventSourceListener = new OpenAISSEEventSourceListener(topicId, sseEmitter);
+            List<Message> finalMsgHistory = msgHistory;
+            openAIEventSourceListener.onDone(respMessage -> {
+                Message tempMessage = Message.builder().content(respMessage).role(Message.Role.ASSISTANT).build();
+                finalMsgHistory.add(tempMessage);
+                redisTemplate.opsForHash().put(cacheKey, CACHE_KEY_MSG_CONTEXT, JSONUtil.toJsonStr(finalMsgHistory));
+            });
+            log.info("话题:{},开始发送消息~~~", topicId);
             ChatCompletion completion = ChatCompletion
                     .builder()
                     .messages(msgHistory)
                     .model(aiChatProperties.getModel())
                     .build();
             openAiStreamClient.streamChatCompletion(completion, openAIEventSourceListener);
-            redisTemplate.opsForHash().put(cacheKey, CACHE_KEY_MSG_CONTEXT, JSONUtil.toJsonStr(msgHistory));
             //update-end---author:chenrui ---date:20240223  for：[QQYUN-8225]聊天记录保存------------
         }
         //update-end---author:chenrui ---date:20240625  for：[TV360X-1570]给于更友好的提示，提示未配置ai------------

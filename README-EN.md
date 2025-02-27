@@ -7,12 +7,12 @@
 JEECG BOOT AI Low Code Platform
 ===============
 
-Current version: 3.7.2 (Release date: 2024-12-12)
+Current version: 3.7.3 (Release date: 2025-02-10)
 
 
 [![AUR](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](https://github.com/zhangdaiscott/jeecg-boot/blob/master/LICENSE)
 [![](https://img.shields.io/badge/Author-guojusoft-orange.svg)](http://www.jeecg.com)
-[![](https://img.shields.io/badge/version-3.7.2-brightgreen.svg)](https://github.com/zhangdaiscott/jeecg-boot)
+[![](https://img.shields.io/badge/version-3.7.3-brightgreen.svg)](https://github.com/zhangdaiscott/jeecg-boot)
 [![GitHub stars](https://img.shields.io/github/stars/zhangdaiscott/jeecg-boot.svg?style=social&label=Stars)](https://github.com/zhangdaiscott/jeecg-boot)
 [![GitHub forks](https://img.shields.io/github/forks/zhangdaiscott/jeecg-boot.svg?style=social&label=Fork)](https://github.com/zhangdaiscott/jeecg-boot)
 
@@ -64,8 +64,8 @@ Jeecg-Boot AI low code platform can be applied in the development of any J2EE pr
 Starts the project
 -----------------------------------
 
-- [IDEA Quick start](https://help.jeecg.com/java/setup/idea/startup.html)
-- [Docker Quick start](https://help.jeecg.com/java/docker/quick.html)
+- [IDEA Quick start](https://help.jeecg.com/java/setup/idea/startup)
+- [Docker Quick start](https://help.jeecg.com/java/docker/quick)
 
 
 
@@ -74,7 +74,7 @@ Technical documentation
 
 - Website：  [http://www.jeecg.com](http://www.jeecg.com)
 - Demo ： [OnlineDemo](http://boot3.jeecg.com) | [APP](http://jeecg.com/appIndex)
-- Doc：  [DocumentCenter](http://help.jeecg.com) | [AI Config](https://help.jeecg.com/java/ai/aichat.html)
+- Doc：  [DocumentCenter](http://help.jeecg.com) | [AI Config](https://help.jeecg.com/java/ai/aichat)
 - Newbie guide： [Quick start](http://www.jeecg.com/doc/quickstart) |   [Q&A ](http://www.jeecg.com/doc/qa)  |  [1 minute experience](https://my.oschina.net/jeecg/blog/3083313)
 - QQ group ： ⑩716488839、⑨808791225、⑧825232878、⑦791696430、⑥730954414(full)、683903138(full)、⑤860162132(full)、④774126647(full)、③816531124(full)、②769925425(full)、①284271917(full)
 
@@ -197,7 +197,7 @@ Technical Architecture:
 
 - Persistence layer framework: MybatisPlus 3.5.3.2
 
-- Report tool: JimuReport 1.9.1
+- Report tool: JimuReport 1.9.3
 
 - Security framework: Apache Shiro 1.12.0, Jwt 3.11.0
 
@@ -243,7 +243,7 @@ Technical Architecture:
 | DeepSeek | √ |
 | ChatGPT | √ |
 
-AI Config： https://help.jeecg.com/java/ai/aichat.html
+AI Config： https://help.jeecg.com/java/ai/aichat
 
 ## Microservice solutions
 
@@ -255,7 +255,7 @@ AI Config： https://help.jeecg.com/java/ai/aichat.html
 - 6. Distributed files Minio and Alioss √
 - 7. Unified permission control
 - 8. Service monitoring SpringBootAdmin√
-- 9. link tracking Skywalking  [reference document](https://help.jeecg.com/java/springcloud/super/skywarking.html)
+- 9. link tracking Skywalking  [reference document](https://help.jeecg.com/java/springcloud/super/skywarking)
 - 10. Messaging middleware RabbitMQ √
 - 11. Distributed task xxl-job √
 - 12. Distributed Transaction Seata
@@ -272,8 +272,8 @@ AI Config： https://help.jeecg.com/java/ai/aichat.html
 ![功能蓝图](https://jeecgos.oss-cn-beijing.aliyuncs.com/upload/test/Jeecg-Boot-lantu202005_1590912449914.jpg "在这里输入图片标题")
 
 ### quick start
-- Microservice Development：  [Monomer upgrade to microservice](https://help.jeecg.com/java/springcloud/switchcloud/monomer.html)
-- [Docker starts the micro-service background](https://help.jeecg.com/java/docker/springcloud.html)
+- Microservice Development：  [Monomer upgrade to microservice](https://help.jeecg.com/java/springcloud/switchcloud/monomer)
+- [Docker starts the micro-service background](https://help.jeecg.com/java/docker/springcloud)
 
 
 ### Effect of system
